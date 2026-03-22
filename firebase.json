@@ -1,0 +1,37 @@
+{
+	"flutter": {
+		"platforms": {
+			"android": {
+				"default": {
+					"projectId": "study-mate-official",
+					"appId": "1:126481720028:android:132e3089f7781cf76fca19",
+					"fileOutput": "android/app/google-services.json"
+				}
+			},
+			"dart": {
+				"lib/firebase_options.dart": {
+					"projectId": "study-mate-official",
+					"configurations": {
+						"android": "1:126481720028:android:132e3089f7781cf76fca19",
+						"ios": "1:126481720028:ios:24a607c2fa3407d66fca19",
+						"macos": "1:126481720028:ios:24a607c2fa3407d66fca19",
+						"web": "1:126481720028:web:2e2ead20710350526fca19",
+						"windows": "1:126481720028:web:d1d41ec90ce11a986fca19"
+					}
+				}
+			}
+		}
+	},
+	"functions": [
+		{
+			"source": "functions",
+			"codebase": "default",
+			"ignore": [
+				"node_modules",
+				".git",
+				"firebase-debug.log",
+				"firebase-debug.*.log"
+			]
+		}
+	]
+}

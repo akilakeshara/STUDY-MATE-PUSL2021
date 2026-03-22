@@ -1,0 +1,47 @@
+name: computing_group_project
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_generative_ai: ^0.4.4
+  google_fonts: ^8.0.2
+  flutter_svg: ^2.0.9
+  cupertino_icons: ^1.0.8
+  firebase_core: any
+  firebase_auth: ^6.1.4
+  cloud_firestore: any
+  cloud_functions: ^6.0.6
+  firebase_storage: any
+  google_sign_in: ^7.2.0
+  image_picker: ^1.1.2
+  file_picker: ^10.3.10
+  url_launcher: ^6.3.1
+  http: ^1.1.0
+  intl: ^0.20.2
+  intl_phone_field: ^3.1.0
+  youtube_player_flutter: ^9.0.3
+  dash_chat_2: ^0.0.21
+  table_calendar: ^3.2.0
+  shared_preferences: ^2.5.4
+  animate_do: ^4.2.0
+  lottie: ^3.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/google_logo.png
+
+dependency_overrides:
+  intl: ^0.20.2
