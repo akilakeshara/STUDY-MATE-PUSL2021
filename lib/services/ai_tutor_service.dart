@@ -1,17 +1,17 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart'; // Imported to load environment variables securely
 
 class AITutorService {
-  // API SELECT
-  static const String _apiKey = 'AIzaSyABGJqjKwpO9VBtpcch_iIvy4sowupOBkM';
-
   late final GenerativeModel _model;
   late final ChatSession _chatSession;
 
   AITutorService() {
-    // 
+    // Retrieve the API key from the .env file (Removed hardcoded key for security)
+    final apiKey = dotenv.env['GOOGLE_API_KEY'] ?? '';
+
     _model = GenerativeModel(
       model: 'gemini-2.5-flash',
-      apiKey: _apiKey,
+      apiKey: apiKey,
       systemInstruction: Content.system(
         "You are 'Study Mate AI Tutor', an educational assistant for Sri Lankan Grade 9-13 students. "
         "Strictly answer only questions related to Mathematics, English Language, and IT/ICT based on the Sri Lankan syllabus. "
@@ -29,14 +29,14 @@ class AITutorService {
       return response.text ?? "Sorry I Can't Understand, Can You Say it again?";
       
     } on GenerativeAIException catch (e) {
-      // API LIMIT
+      // Handle API Limit Exceeded or AI-specific errors
       print("Gemini API Error: $e");
-      return "Many Children arew Asking Qustions at this time.Ask again in about 30 seconds! ⏳";
+      return "Many students are asking questions at this time. Please ask again in about 30 seconds! ⏳";
        
     } catch (e) {
-      // Other Errors
+      // Handle network or other general errors
       print("General Error: $e");
-      return "Sorry, Please Check your Internet Connection. 📶";
+      return "Sorry, please check your internet connection. 📶";
     }
   }
-} 
+}
